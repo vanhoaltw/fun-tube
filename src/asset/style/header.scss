@@ -1,0 +1,56 @@
+.wrap_header{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    align-items: center;
+    padding:8px 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    div:not(:nth-child(3)){
+        @include flexBox(center,center);
+    }
+    &_logo{
+        span{
+            margin-left: 15px;
+            font-size: 15px;
+            letter-spacing: 0px;
+            height: 100%;
+            line-height: 37px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &_search{
+        width: 100%;  
+        &_input{
+            border: 1px solid #bdc3c7;
+            height: $height_header - 10px;
+            color:#bdc3c7;
+            width: 68%;
+            padding:0 0 0 10px;
+            margin-right: 5px;
+            input{
+                height: 100%;
+                width: 100%;
+                border: none;
+                outline: none;
+    
+            }
+            button{
+                height: 100%;
+                width: 90px;
+                margin-left:5px;
+                color: #7f8c8d;
+                border: none;
+                border-left: 1px solid #bdc3c7;
+                cursor: pointer;
+                &:hover{
+                    background-color: #bdc3c7;
+                }
+            }
+            
+        }
+
+    }
+    &_user{
+        @include flexBox(center, space-between);
+    }
+}

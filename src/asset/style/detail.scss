@@ -1,0 +1,73 @@
+.detail_container{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-content: center;
+    padding:20px 35px;
+    .left{
+        text-align: left;
+        &_video{
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            background-size: cover;
+            background-color: black;
+            background-position: center;
+        }
+        div:not(div:nth-child(1)){
+            margin: 10px 0;
+        }
+        &_emotion{
+            @include flexBox(center,space-between);
+            p{
+                color:red;
+            }
+            &_like{
+                font-size: 15px;
+                @include flexBox(center,space-between);
+                span{
+                    @include flexBox(center,space-between);
+                    margin-left: 15px;
+                    p{
+                        margin-left: 5px;
+                    }
+
+                }
+            }
+        }
+        &_info{
+            display: grid;
+            grid-template-columns: 7% 93%;
+            &_left{
+                padding-top:15px;
+            }
+            &_right{
+                &_top{
+                    @include flexBox(center, space-between)
+                }
+            }
+        }
+        &_cmt{
+            border-top: 1px solid black;
+            padding-top:10px;
+            &_t{
+                @include flexBox(center,flex-start);
+                button{
+                    margin-left: 10px;
+                    font-weight: bolder;
+                }
+            }
+            &_b{
+                display: grid;
+                grid-template-columns: 7% 93% ;
+                align-content: start;
+                span{
+                    button{
+                        float: right;
+                        margin-left: 5px;
+                    }
+
+                }
+            }
+        }
+    }
+}

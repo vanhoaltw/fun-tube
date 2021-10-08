@@ -1,0 +1,24 @@
+*{
+    padding:0;
+    margin:0;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+$height_header: 50px;
+// @mixin mobile{
+//     @media only screen and (max-width: )  {
+//         @content
+//     }
+// }
+@mixin flexBox($ali,$justi) {
+    display: flex;
+    justify-content: $justi;
+    align-items: $ali;
+}
+
+
+@import './header.scss';
+@import './body.scss';
+@import './detail.scss';
+@import './comment.scss';

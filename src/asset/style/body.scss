@@ -1,0 +1,121 @@
+.wrap_body{
+    display: grid;
+    grid-template-columns: 17% 83%;
+    // Left
+    &_left{
+        div{
+            width: 100%;
+            padding:9px 30px;
+            font-size: 15px;
+            color: #34495e;
+            cursor: pointer;
+            @include flexBox(center,flex-start);
+            p{
+                margin-left: 20px;
+                margin-bottom: 3px;
+            }
+            &:hover{
+                background-color: #ecf0f1;
+            }
+        }
+    }
+    // Right
+    &_right{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        .video_item{    
+            width:260px;
+            height: 320px;
+            overflow: hidden;
+            margin: 3px;
+            font-size: 14px;
+            cursor: pointer;
+            &_thumnail{
+                height: 60%;
+                background-color: aliceblue;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                &_option{
+                    position: absolute;
+                    top:5px;
+                    right: 5px;
+                    display: none;
+                    div{
+                        @include flexBox(center, flex-end);
+                        div{                                            
+                            span{   
+                                opacity: 0;
+                                transition-delay: .8s;
+                                margin: 0 5px;
+                            }
+                            margin-bottom: 5px;
+                            transition-delay: .8s;
+                            background-color:rgba(45, 52, 54,1) ;
+                            width: 26px;
+                            padding: 3px;
+                            height: 25px;
+                            color: white;
+                            font-size: 13px;
+                            &:hover{
+                                width: 100%;
+                                span{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+                &_timer{
+                    padding:3px;
+                    position:absolute;
+                    font-size: 12px;
+                    bottom:5px;
+                    right:5px;
+                    color:white;
+                    border-radius: 3px;
+                    background-color: rgba(45, 52, 54,0.8);
+                }
+            }
+            &_bottom{
+                display: grid;
+                margin-top: 5px;
+                grid-template-columns: 20% 80%;
+                padding-right: 20px;
+                font-size: .8rem;
+                text-align: left;
+                position: relative;
+                float: left;
+                h4{
+                    margin-bottom: 5px;
+                }
+                &_description{
+                    
+                    &_option{
+                        position: absolute;
+                        right:5px;
+                        top:5px;
+                        font-size: 1.2rem;
+                        display: none;
+                    }
+                    div{
+                        padding:3px 0; 
+                        .css-i4bv87-MuiSvgIcon-root{
+                            font-size: 4px;
+                            margin:0 5px;
+                        }
+                        @include flexBox(center, flex-start)
+                    }
+                }
+            }
+
+            &:hover{
+                .video_item_thumnail_option,.video_item_bottom_description_option {
+                    display: block;
+                }
+            }
+        }
+    }
+}
