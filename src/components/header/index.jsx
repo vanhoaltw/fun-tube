@@ -9,11 +9,16 @@ import VideoCallIcon from '@mui/icons-material/VideoCall';
 import BlurOnIcon from '@mui/icons-material/BlurOn';
 import { Avatar, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom'
+import { ShowContext } from '../../App';
+
+
 export const Header = () => {
+    const {setShow, show } = React.useContext(ShowContext) 
+    console.log('setShow', show )
     return (
         <div className='wrap_header'>
             <div className='wrap_header_logo'>
-                <IconButton>
+                <IconButton onClick={()=> setShow(e => !e)}>
                     <MenuIcon/>
                 </IconButton>
                 <span>
