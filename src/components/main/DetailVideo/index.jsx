@@ -1,15 +1,17 @@
 import React,{useState} from 'react'
 import { LeftDetail } from './LeftDetail'
-import { VideoItem } from '../VideoItem'
 import getVideo from '../../../api/getVideo'
 import { ListVideo } from '../ListVideo/ListVideo'
 import { useParams } from 'react-router'
+import { Ouroboro } from 'react-spinners-css'
+
 
 const DetailVideo = () => {
     const {videoId} = useParams()
     const [loading,setLoading] = useState(true)
     const [dataVideo,setDataVideo] = useState({})
     const [cmt , setCmt]=useState({})
+    
     React.useEffect((
         ()=>{
             (async()=>{
@@ -28,7 +30,7 @@ const DetailVideo = () => {
     ),[videoId])
     return (
         <div>
-            {loading ? <p>DANG TAI</p> : 
+            {loading ? <Ouroboro className='loading'/> : 
             <div className='detail_container'>
                 <LeftDetail dataCmt={cmt} dataVideo={dataVideo}/>
                 <ListVideo video={videoId}/>

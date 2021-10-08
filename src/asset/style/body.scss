@@ -24,20 +24,22 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
+        position: relative;
         .video_item{    
-            width:260px;
-            height: 320px;
+            width:var(--viw);
+            height: var(--vih);
             overflow: hidden;
             margin: 3px;
             font-size: 14px;
             cursor: pointer;
             &_thumnail{
-                height: 60%;
+                height: var(--vith);
                 background-color: aliceblue;
-                width: 100%;
+                width: var(--vitw);
                 background-size: cover;
                 background-position: center;
                 position: relative;
+                float: var(--vitf);
                 &_option{
                     position: absolute;
                     top:5px;
@@ -81,13 +83,15 @@
             }
             &_bottom{
                 display: grid;
-                margin-top: 5px;
-                grid-template-columns: 20% 80%;
+                margin-top: var(--vidm);
+                grid-template-columns: var(--vib);
                 padding-right: 20px;
                 font-size: .8rem;
                 text-align: left;
                 position: relative;
-                float: left;
+                .css-1wlk0hk-MuiAvatar-root{
+                    width: var(--aw);
+                }
                 h4{
                     margin-bottom: 5px;
                 }

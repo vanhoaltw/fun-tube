@@ -5,17 +5,16 @@ import { Ouroboro } from 'react-spinners-css'
 
 export const ListVideo = (video) => {
     const [loading, setLoading] = React.useState(true);
-    const { videoId } = video
+    const a = video
     const [time, setTime] = React.useState(new Date());
-    const [data, setData] = React.useState({})
+    const [dataVd, setDa] = React.useState({})
     React.useEffect((
         ()=>{
             (async()=>{
+                const res = await getVideo.suggested(a.video);
+                setDa(e =>  res.data);
+                setLoading(false)
                 try{
-                    const respone = await getVideo.suggested(videoId);
-                    console.log('data: ', respone.data);
-                    setData(respone.data);
-                    setLoading(false)
                 }catch(error){
                     console.log('Get Error:',error)
                 }
@@ -25,7 +24,9 @@ export const ListVideo = (video) => {
 
     return (
         <div>
-            {loading ? <Ouroboro/> :  <VideoItem listData={data} timer={time}/> }                       
+         
+            {loading ? <Ouroboro className='loading'/> :  <VideoItem listData={dataVd} timer={time}/>   }                
+         
         </div>
     )
 }

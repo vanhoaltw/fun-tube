@@ -3,11 +3,12 @@ import option from './videoAPI'
 
 const getVideo = {
     suggested:(videoId)=>{
+        const a = typeof videoId != 'undefined' ? videoId : 'qjc1XWH9kUU'
         const paramss = {
-            relatedToVideoId: videoId ? videoId : '7ghhRHRP6t4',
+            relatedToVideoId: a ,
             part : 'id,snippet',
             type: 'video',
-            maxResult: 50
+            maxResults: '20',
         }
         const method = 'search'
         return axios.request(option(method,paramss));

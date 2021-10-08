@@ -33,6 +33,7 @@ export const LeftDetail = (props) => {
         }else return count
     }
     const formatViewCount = (view)=>{
+            if (!view) return 0
             view = view.toString();
             var pattern = /(-?\d+)(\d{3})/;
             while (pattern.test(view))
@@ -84,7 +85,7 @@ export const LeftDetail = (props) => {
                     <div className='left_info_right_top'>
                         <span>
                             <h4>{dataVideo.data.items[0].snippet.channelTitle}</h4>
-                            <p>{formatViewCount(dataVideo.data.items[0].statistics.commentCount)}</p>    
+                            <p>{formatViewCount(dataVideo.data.items[0].statistics.viewCount)}</p>    
                         </span>
                         <Button variant='contained' color='error'>Đăng kí</Button>
                     </div>
@@ -118,8 +119,9 @@ export const LeftDetail = (props) => {
                                 <Button disabled size='small'> Hủy </Button>
                         </span>
                     </div>
-                    
-                    <Comment dataCmt={dataCmt} img={dataVideo.data.items[0].snippet.thumbnails.default.url}/>
+                    {formatViewCount(dataVideo.data.items[0].statistics.commentCount) == 0 ? '' : 
+                        <Comment dataCmt={dataCmt} img={dataVideo.data.items[0].snippet.thumbnails.default.url}/>
+                    }
             </div>
         </div>
     )

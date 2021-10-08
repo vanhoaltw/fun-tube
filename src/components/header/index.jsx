@@ -8,6 +8,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import VideoCallIcon from '@mui/icons-material/VideoCall';
 import BlurOnIcon from '@mui/icons-material/BlurOn';
 import { Avatar, IconButton } from '@mui/material';
+import { Link } from 'react-router-dom'
 export const Header = () => {
     return (
         <div className='wrap_header'>
@@ -17,7 +18,8 @@ export const Header = () => {
                 </IconButton>
                 <span>
                     <YouTubeIcon sx={{ fontSize:'2.3rem', color:'red'}}/>
-                    <h3>FunTube</h3>
+                    
+                    <Link to='/' ><h3 >FunTube</h3></Link>
                 </span>
             </div>
             <div className='wrap_header_search'>

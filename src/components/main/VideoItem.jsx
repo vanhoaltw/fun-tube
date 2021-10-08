@@ -9,8 +9,6 @@ import { Link } from 'react-router-dom';
 
 export const VideoItem = (props) => {
     const {items} = props.listData
-    const getWidth = React.useRef()
-    console.log('width',getWidth.current.clientWidth)
     const times = props.timer
     var gettime = '06 : 15'
     const formatTime = (timer)=>{
@@ -37,13 +35,14 @@ export const VideoItem = (props) => {
         
     }   
     return (
-        <div  className='wrap_body_right' ref={getWidth}>
-        {items.map(data => (
+        <div  className='wrap_body_right' >
+        {items.map((data,i) => (
+            data.snippet ?
             <div className='video_item' key={data.id.videoId}>
                 <Link to={`/detail/${data.id.videoId}`} style={{textDecoration:'none', color:'black'}}>
               <div 
                 className='video_item_thumnail'
-                style={{ backgroundImage: `url(${data.snippet.thumbnails.high.url})`}}
+                style={{ backgroundImage: `url(${data.snippet.thumbnails.high.url || data.snippet.thumbnails.medium.url || data.snippet.thumbnails.default.url})`}}
               >
                   
                   <span className='video_item_thumnail_timer'> 
@@ -65,11 +64,9 @@ export const VideoItem = (props) => {
                   </span>
               </div>
               <span className='video_item_bottom'>
-                    {getWidth.current.clientWidth < 400 ? '' : 
                         <div>
                             <Avatar src={data.snippet.thumbnails.high.url}> {!data.snippet.thumbnails.high.url ?  data.snippnet.channelTitle.charAt(0) : ''}</Avatar>
-                        </div>    
-                    }                                      
+                        </div>                                 
                   <div className='video_item_bottom_description'>
                       <MoreVertIcon className='video_item_bottom_description_option'/>
                       <h4>{data.snippet.title}</h4>
@@ -83,7 +80,7 @@ export const VideoItem = (props) => {
               </span>
             </Link>
           </div>
-            
+            : ''
         ))}
 
         </div>
