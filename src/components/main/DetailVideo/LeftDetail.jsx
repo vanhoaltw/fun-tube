@@ -25,6 +25,7 @@ export const LeftDetail = (props) => {
         return `${t[2]} thg ${t[1]}, ${t[0]}`
     }
     const formatCount = (count)=>{
+        if(!count)return 0
         const countStr = count.toString()
         if(count >= 1000){
             return countStr.slice(0,2) + ' N'

@@ -6,7 +6,7 @@ const option=(method, paramss)=>{
       params: paramss,
       headers: {
         'x-rapidapi-host': 'youtube-v31.p.rapidapi.com',
-        'x-rapidapi-key': '16ea4fca49msha173557c1ef55b1p19e1e8jsna8e2bf5b6549'
+        'x-rapidapi-key': '3a7d69f1a7msh94493200be81e8cp19fdf7jsndb0ea0c33791'
       }
     }
 } 

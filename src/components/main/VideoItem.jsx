@@ -34,9 +34,10 @@ export const VideoItem = (props) => {
         return minute + ' phút trước'
         
     }   
+    if(!items) return <></>
     return (
         <div  className='wrap_body_right' >
-        {items.map((data,i) => (
+        {items?.map((data,i) => (
             data.snippet ?
             <div className='video_item' key={data.id.videoId}>
                 <Link to={`/detail/${data.id.videoId}`} style={{textDecoration:'none', color:'black'}}>

@@ -3,7 +3,7 @@ import option from './videoAPI'
 
 const getVideo = {
     suggested:(videoId)=>{
-        const a = typeof videoId != 'undefined' ? videoId : 'qjc1XWH9kUU'
+        const a = typeof videoId != 'undefined' ? videoId : '7ghhRHRP6t4'
         const paramss = {
             relatedToVideoId: a ,
             part : 'id,snippet',

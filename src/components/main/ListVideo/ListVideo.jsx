@@ -12,6 +12,7 @@ export const ListVideo = (video) => {
         ()=>{
             (async()=>{
                 const res = await getVideo.suggested(a.video);
+                console.log("videos",res)
                 setDa(e =>  res.data);
                 setLoading(false)
                 try{
